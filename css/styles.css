@@ -1,0 +1,49 @@
+@import url("reset.css");
+
+@import url("/fonts/fonts.css");
+
+
+a {
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Oxygen";
+  font-weight: 400;
+}
+
+.svg-hidden {
+  position: absolute;
+  z-index: -10;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+/************************************************/
+
+
+
+
+/********* ADAPTIVE ****************/
+
+/*** @media 640px ***/
+
+
+/*** @media 768px ***/
+
+
+/*** @media 1024px ***/
+
+
+/*** @media 1280px ***/
+
+
+
+
+
+
