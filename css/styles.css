@@ -1,1 +1,41 @@
-/*# sourceMappingURL=styles.css.map */
+body {
+  font-family: "Oxygen";
+  font-weight: 400;
+  background: green;
+  font-size: 20px;
+}
+
+.container {
+  min-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  padding: 20px 0;
+  background: #000;
+}
+.header--sm {
+  font-size: 14px;
+}
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__logo {
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.header__list {
+  display: flex;
+  gap: 20px;
+}
+.header__item a {
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.header__item a.active {
+  color: green;
+}/*# sourceMappingURL=styles.css.map */
