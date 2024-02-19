@@ -1,0 +1,75 @@
+// ? универсальный флекс-контент!
+@mixin flex-justify ($content) { // ? тут ставиться один из параметров (center, space-between, space-around .....)
+  display: flex;
+  justify-content: $content;
+  align-items: center;
+  gap: 50px;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// ? можно подключить так (переменная + указание размера шрифта)
+// @mixin title($font) {
+//     color: $white-color;
+//     font-weight: 700;
+//     font-size: $font;
+// }
+
+// h1 {
+//     @include title(30px);
+// }
+
+// h2 {
+//     @include title(15px);
+// }
+
+
+// ? а можно подкл. с указанием деф-размера шрифта
+@mixin title($font: 40px) { // ? указываем в переменную деф-размер шрифта
+  color: $white-color;
+  font-weight: 700;
+  font-size: $font;
+  text-transform: uppercase;
+}
+
+// h1 {
+//     @include title; // ? тут устанавливаеться деф-размер шрифта (40px)
+//     @media (max-width: $breakpoint-lg) { // ? доб. медиа-квери
+//         color: yellow;
+//     }   
+// }
+
+@mixin viewport-lg {
+  @media (max-width: $breakpoint-lg) {
+      @content; // ? add all pereferens
+  }
+}
+
+@mixin viewport-xs {
+  @media (max-width: $breakpoint-xs) {
+      @content; // ? add all pereferens
+  }
+}
+
+@mixin link ($color: $regular-color, $hover: red, $active: blue) {
+  color: $color;
+  text-decoration: none;
+  display: inline-block;
+
+  &:hover {
+      color: $hover;
+  }
+  &:active {
+      color: $active;
+  }
+}

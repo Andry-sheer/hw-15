@@ -1,9 +1,11 @@
-$primary-color: #505050;
-$second-color: green;
-$black-color: #000;
-$white-color: #ffffff;
-$font-sm: 14px;
-$font-lg: 20px;
+@import 'scss/_fonts';
+@import 'scss/_reset';
+@import 'scss/_mixins';
+@import 'scss/_var';
+
+// @use 'scss/_fonts';
+// @use 'scss/_reset';
+
 
 body {
     font-family: 'Oxygen';
@@ -13,8 +15,9 @@ body {
 }
 
 .container {
-    min-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
+    padding: 0 30px;
 }
 
 
@@ -28,9 +31,8 @@ body {
     }
 
     &__container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        //@include flex-between;
+        @include flex-justify(space-between); // ? тут ставиться один из параметров (center, space-between, space-around .....)
     }
 
     // ? .header__logo {}
@@ -62,6 +64,32 @@ body {
     }
 }
 
+h1 {
+    @include title;
+    @include viewport-lg {
+        color: $regular-color;
+        text-transform: lowercase;
+        font-weight: 400;
+    }
 
+    @include viewport-xs {
+        color: yellow;
+        font-size: $font-sm;
+        font-weight: 700;
+    }
+}
 
+h2 {
+    @include title(20px); // ? а тут перезаписываеться деф-размер на (20px)
+}
 
+.link {
+    @include link(orange);
+    font-size: 40px;
+}
+
+.link--second {
+    @include link(orange, violet, black);
+     // ? перечисление параметров из ЛИНК с другими цветами ($color: $regular-color, $hover: red, $active: blue)
+    font-size: 30px;
+}
